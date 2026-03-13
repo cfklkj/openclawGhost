@@ -1,0 +1,3 @@
+# openclawGhost 依赖包
+click>=8.0.0
+cryptography>=3.4.0
