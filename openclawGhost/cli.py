@@ -8,6 +8,7 @@ from pathlib import Path
 from . import __version__
 from .core.backup import BackupEngine
 from .core.scanner import FileScanner
+from .utils.manifest import ManifestGenerator
 
 @click.group()
 @click.version_option(version=__version__)
@@ -27,14 +28,36 @@ def version():
 @click.option('--encrypt', is_flag=True, help='启用加密')
 @click.option('--compress', is_flag=True, help='启用压缩')
 @click.option('--exclude', type=str, multiple=True, help='排除文件模式')
+@click.option('--manifest', type=str, help='使用清单文件进行备份')
 @click.argument('source', default='.')
-def backup(full, incremental, name, encrypt, compress, exclude, source):
+def backup(full, incremental, name, encrypt, compress, exclude, manifest, source):
     """
     执行备份操作
     
     SOURCE: 要备份的源目录路径（默认为当前目录）
+    
+    使用清单备份:
+    openclawGhost backup --manifest manifest.json
     """
     backup_type = "full" if full else "incremental" if incremental else "full"
+    
+    # 如果使用清单备份
+    if manifest:
+        click.echo(f"使用清单文件：{manifest}")
+        engine = BackupEngine()
+        metadata = engine.backup_from_manifest(
+            manifest_path=manifest,
+            name=name,
+            backup_type=backup_type,
+            compress=compress,
+            encrypt=encrypt
+        )
+        
+        if metadata:
+            click.echo(f"\n备份成功！ID: {metadata.id}")
+        else:
+            click.echo("备份失败")
+        return
     
     # 验证源路径
     source_path = Path(source).resolve()
@@ -59,6 +82,45 @@ def backup(full, incremental, name, encrypt, compress, exclude, source):
         click.echo(f"\n备份成功！ID: {metadata.id}")
     else:
         click.echo("备份失败")
+
+@cli.command()
+@click.argument('source', default='.')
+@click.option('--output', type=str, help='清单输出路径')
+@click.option('--exclude', type=str, multiple=True, help='排除模式')
+def manifest(source, output, exclude):
+    """
+    生成项目文件清单
+    
+    SOURCE: 项目根目录（默认为当前目录）
+    """
+    source_path = Path(source).resolve()
+    
+    if not source_path.exists():
+        click.echo(f"错误：路径不存在：{source_path}")
+        return
+    
+    click.echo(f"正在扫描：{source_path}")
+    
+    # 创建清单生成器
+    generator = ManifestGenerator(str(source_path))
+    
+    # 设置排除模式
+    exclude_list = list(exclude) if exclude else None
+    generator.scan(exclude_patterns=exclude_list)
+    
+    # 打印摘要
+    generator.print_summary()
+    
+    # 保存清单
+    if output:
+        generator.save(output)
+    else:
+        # 默认保存到 .openclawGhost/manifest.json
+        manifest_path = source_path / '.openclawGhost' / 'manifest.json'
+        manifest_path.parent.mkdir(parents=True, exist_ok=True)
+        generator.save(str(manifest_path))
+    
+    click.echo(f"\n清单已生成!")
 
 @cli.command()
 @click.argument('snapshot_id')
@@ -110,6 +172,8 @@ def list():
             click.echo(f"  大小：{meta.get('total_size', 0)} bytes")
             click.echo(f"  压缩：{'是' if meta.get('compressed') else '否'}")
             click.echo(f"  加密：{'是' if meta.get('encrypted') else '否'}")
+            if meta.get('manifest_path'):
+                click.echo(f"  清单：{meta.get('manifest_path')}")
             click.echo()
         
         click.echo("-" * 60)

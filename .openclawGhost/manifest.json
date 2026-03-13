@@ -1,0 +1,219 @@
+{
+  "version": "1.0",
+  "generated_at": "2026-03-13T11:10:46.002018",
+  "root_path": "H:\\openclawWk\\workspace-magic\\workspace\\2026\\03\\13\\openclawGhost",
+  "files": [
+    {
+      "path": "README.md",
+      "size": 2188,
+      "mtime": "2026-03-13T08:58:10.741798",
+      "type": "markdown"
+    },
+    {
+      "path": "requirements.txt",
+      "size": 59,
+      "mtime": "2026-03-13T08:57:31.375228",
+      "type": "text"
+    },
+    {
+      "path": "setup.py",
+      "size": 1026,
+      "mtime": "2026-03-13T08:57:31.680155",
+      "type": "python"
+    },
+    {
+      "path": "test_backup.py",
+      "size": 4064,
+      "mtime": "2026-03-13T10:28:39.011802",
+      "type": "python"
+    },
+    {
+      "path": "test_cli.py",
+      "size": 1450,
+      "mtime": "2026-03-13T09:00:41.078928",
+      "type": "python"
+    },
+    {
+      "path": "test_incremental.py",
+      "size": 4443,
+      "mtime": "2026-03-13T10:37:07.102173",
+      "type": "python"
+    },
+    {
+      "path": "test_manifest.py",
+      "size": 4690,
+      "mtime": "2026-03-13T11:09:42.353365",
+      "type": "python"
+    },
+    {
+      "path": "规划书.md",
+      "size": 9765,
+      "mtime": "2026-03-13T08:43:48.517673",
+      "type": "markdown"
+    },
+    {
+      "path": "docs\\phase1_summary.md",
+      "size": 2789,
+      "mtime": "2026-03-13T09:01:34.081562",
+      "type": "markdown"
+    },
+    {
+      "path": "docs\\phase2_summary.md",
+      "size": 6530,
+      "mtime": "2026-03-13T10:39:48.871995",
+      "type": "markdown"
+    },
+    {
+      "path": "docs\\quickstart.md",
+      "size": 522,
+      "mtime": "2026-03-13T08:58:22.115601",
+      "type": "markdown"
+    },
+    {
+      "path": "openclawGhost\\cli.py",
+      "size": 6997,
+      "mtime": "2026-03-13T11:05:54.126388",
+      "type": "python"
+    },
+    {
+      "path": "openclawGhost\\__init__.py",
+      "size": 109,
+      "mtime": "2026-03-13T08:54:36.812928",
+      "type": "python"
+    },
+    {
+      "path": "openclawGhost\\config\\manager.py",
+      "size": 2820,
+      "mtime": "2026-03-13T08:56:24.061281",
+      "type": "python"
+    },
+    {
+      "path": "openclawGhost\\config\\__init__.py",
+      "size": 27,
+      "mtime": "2026-03-13T08:54:36.960926",
+      "type": "python"
+    },
+    {
+      "path": "openclawGhost\\core\\backup.py",
+      "size": 14858,
+      "mtime": "2026-03-13T11:02:50.361471",
+      "type": "python"
+    },
+    {
+      "path": "openclawGhost\\core\\scanner.py",
+      "size": 3705,
+      "mtime": "2026-03-13T10:13:30.237638",
+      "type": "python"
+    },
+    {
+      "path": "openclawGhost\\core\\__init__.py",
+      "size": 27,
+      "mtime": "2026-03-13T08:54:36.821929",
+      "type": "python"
+    },
+    {
+      "path": "openclawGhost\\models\\__init__.py",
+      "size": 27,
+      "mtime": "2026-03-13T08:54:36.972966",
+      "type": "python"
+    },
+    {
+      "path": "openclawGhost\\storage\\crypto.py",
+      "size": 3012,
+      "mtime": "2026-03-13T10:22:50.164041",
+      "type": "python"
+    },
+    {
+      "path": "openclawGhost\\storage\\__init__.py",
+      "size": 27,
+      "mtime": "2026-03-13T08:54:36.917931",
+      "type": "python"
+    },
+    {
+      "path": "openclawGhost\\utils\\compress.py",
+      "size": 1829,
+      "mtime": "2026-03-13T10:14:29.314648",
+      "type": "python"
+    },
+    {
+      "path": "openclawGhost\\utils\\logger.py",
+      "size": 1666,
+      "mtime": "2026-03-13T08:57:13.567913",
+      "type": "python"
+    },
+    {
+      "path": "openclawGhost\\utils\\manifest.py",
+      "size": 6499,
+      "mtime": "2026-03-13T10:58:23.179697",
+      "type": "python"
+    },
+    {
+      "path": "openclawGhost\\utils\\__init__.py",
+      "size": 27,
+      "mtime": "2026-03-13T08:54:36.950928",
+      "type": "python"
+    },
+    {
+      "path": "openclawGhost.egg-info\\dependency_links.txt",
+      "size": 1,
+      "mtime": "2026-03-13T08:59:09.266270",
+      "type": "text"
+    },
+    {
+      "path": "openclawGhost.egg-info\\entry_points.txt",
+      "size": 56,
+      "mtime": "2026-03-13T08:59:09.269246",
+      "type": "text"
+    },
+    {
+      "path": "openclawGhost.egg-info\\PKG-INFO",
+      "size": 2884,
+      "mtime": "2026-03-13T08:59:09.263261",
+      "type": "unknown"
+    },
+    {
+      "path": "openclawGhost.egg-info\\requires.txt",
+      "size": 13,
+      "mtime": "2026-03-13T08:59:09.271245",
+      "type": "text"
+    },
+    {
+      "path": "openclawGhost.egg-info\\SOURCES.txt",
+      "size": 532,
+      "mtime": "2026-03-13T08:59:09.371579",
+      "type": "text"
+    },
+    {
+      "path": "openclawGhost.egg-info\\top_level.txt",
+      "size": 20,
+      "mtime": "2026-03-13T08:59:09.273242",
+      "type": "text"
+    },
+    {
+      "path": "scripts\\install.sh",
+      "size": 347,
+      "mtime": "2026-03-13T08:58:22.204706",
+      "type": "shell"
+    },
+    {
+      "path": "tests\\__init__.py",
+      "size": 21,
+      "mtime": "2026-03-13T08:58:22.094984",
+      "type": "python"
+    }
+  ],
+  "directories": [
+    "docs",
+    "openclawGhost",
+    "openclawGhost.egg-info",
+    "scripts",
+    "tests",
+    "openclawGhost\\config",
+    "openclawGhost\\core",
+    "openclawGhost\\models",
+    "openclawGhost\\storage",
+    "openclawGhost\\utils"
+  ],
+  "total_files": 33,
+  "total_size": 83030
+}
